@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url("../images/fond.png"); /* Penser à mettre dark mode du fond */
+    background-image: url("../images/fond.png"); 
 }
 
 iframe {
@@ -23,10 +24,12 @@ iframe {
     flex-direction: column;
 }
 
+
+
 #top {
     height: 40.3vh;
     width: 71vh;
-    background-color: #063970;
+    background-color: #223a5e;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,11 +53,54 @@ iframe {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
+}
+
+
+#profile-view {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    background-color: #ffffff;
+    background-image: 
+        linear-gradient(#e5e5e5 1px, transparent 1px),
+        linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+    background-size: 3vh 3vh; 
+}
+
+
+#profile-view img {
+    height: 12vh;
+    width: 12vh;
+    border-radius: 2vh; 
+    object-fit: cover;
+    margin-bottom: 2vh;
+    box-shadow: 0 0.5vh 1vh rgba(0,0,0,0.1); 
+}
+
+
+#profile-view h1 {
+    font-size: 3.5vh;
+    color: #333;
+    margin-bottom: 0.5vh;
+}
+
+
+#profile-view p {
+    font-size: 1.8vh;
+    color: #888;
 }
 
 
 #mid {
-    height: 2.5vh;
+    
+    height: 5vh; 
     width: 71vh;
     display: flex;
     align-items: center;
@@ -63,16 +109,25 @@ iframe {
 }
 
 #mid div {
-    height: 175%;
-    width: 100%;
-    border-radius: 100vh;
-    background: #000;
+    height: 100%;
+    width: 95%; 
+    border-radius: 1vh;
+    
+   
+    background: linear-gradient(to bottom, 
+        #152338 0%, 
+        #223a5e 50%, 
+        #152338 100%
+    );
+    
+
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.5);
 }
 
 #bot {
     height: 40.3vh;
     width: 71vh;
-    background-color: #063970;
+    background-color: #223a5e;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +163,7 @@ iframe {
     background-color: #e5e5e5;
 }
 
-/*Mettre ombre force bg*/
+
 #cross .assets {
     height: 3vh;
     width: 3vh;
@@ -333,4 +388,71 @@ iframe {
     width: 100;
     height: 100%;
     object-fit: contain;
+}
+
+.app-container {
+    height: 100%;
+    width: 100%;
+    padding: 1.5vh;
+    background-color: #fff;
+    overflow-y: auto; 
+    text-align: left; 
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.app-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.app-header {
+    font-size: 2.2vh;
+    color: #2c3e50; 
+    border-bottom: 0.3vh solid #00c3e3; 
+    margin-bottom: 1.5vh;
+    padding-bottom: 0.5vh;
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+
+.app-content p {
+    font-size: 1.6vh;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 1vh;
+}
+
+.app-content h4 {
+    font-size: 1.8vh;
+    color: #00c3e3;
+    margin-top: 1.5vh;
+    margin-bottom: 0.5vh;
+}
+
+
+.tag {
+    display: inline-block;
+    background: #f0f0f0;
+    padding: 0.5vh 1vh;
+    border-radius: 0.5vh;
+    font-size: 1.4vh;
+    margin: 0.3vh;
+    border: 0.1vh solid #ddd;
+    color: #555;
+    font-weight: bold;
+}
+
+.screen-zoomed {
+    position: fixed !important;       
+    top: 50% !important;              
+    left: 50% !important;             
+    transform: translate(-50%, -50%) scale(1.5) !important; 
+    width: 50vh !important;           
+    height: 40vh !important;          
+    z-index: 9999 !important;         
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.85) !important; 
+    border-radius: 1vh !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
